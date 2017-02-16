@@ -52,7 +52,7 @@ public class Find extends BaseActivity implements View.OnClickListener {
             String departure_time = getIntent().getStringExtra(DEPARTURE_TIME);
             String gender = getIntent().getStringExtra(GENDER);
             String max_person = getIntent().getStringExtra(MAX_PERSON);
-            taxiService.findreg(SessionPref.getInstance(this).getSession().access_token,
+            taxiService.findreg(SessionPref.getInstance(this).getSession(),
                     from, to, departure_time, null, gender, max_person, new Callback<Common>() {
                         @Override
                         public void onResponse(Call<Common> call, Response<Common> response) {

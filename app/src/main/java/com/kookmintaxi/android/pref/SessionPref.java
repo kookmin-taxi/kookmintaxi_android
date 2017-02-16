@@ -14,11 +14,6 @@ public class SessionPref {
     public static final String ACCESS_TOKEN = "access_token";
     public static final String USER_ID = "user_id";
 
-    public static class Session {
-        public String access_token;
-        public String user_id;
-    }
-
     private static SessionPref instance;
 
     private Context mContext;
@@ -41,11 +36,8 @@ public class SessionPref {
         return edit.commit();
     }
 
-    public Session getSession() {
-        Session data = new Session();
-        data.access_token = pref.getString(ACCESS_TOKEN, "");
-        data.user_id = pref.getString(USER_ID, "");
-        return data;
+    public String getSession() {
+        return pref.getString(ACCESS_TOKEN, "");
     }
 
 

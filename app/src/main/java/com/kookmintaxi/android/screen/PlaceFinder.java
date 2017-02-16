@@ -40,7 +40,14 @@ public class PlaceFinder extends BaseActivity {
     protected void initView() {
         search = (EditText) findViewById(R.id.search);
         if(getIntent() != null) {
-            search.setHint(getIntent().getStringExtra(WHERE));
+            switch (getIntent().getIntExtra(WHERE, 0)) {
+                case R.id.main_from:
+                    search.setHint(getString(R.string.input_search_from_place));
+                    break;
+                case R.id.main_to:
+                    search.setHint(getString(R.string.input_search_to_place));
+                    break;
+            }
         }
         resultList = (RecyclerView) findViewById(R.id.place_list);
         resultList.setLayoutManager(llManager);

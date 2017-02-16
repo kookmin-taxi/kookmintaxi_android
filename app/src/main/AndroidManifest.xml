@@ -11,14 +11,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".screen.Main">
+        <activity android:name=".screen.Main"/>
+        <activity android:name=".screen.Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screen.Login" />
         <activity android:name=".screen.Find" />
         <activity android:name=".screen.Register" />
 
