@@ -10,7 +10,7 @@ import retrofit2.Retrofit;
 public class RetrofitFactory {
 
 
-    public static final String ENDPOINT = "http://";
+    public static final String ENDPOINT = "http://52.78.77.212";
     private static RetrofitFactory instance;
 
     private Retrofit retrofit;

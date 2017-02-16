@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_place_finder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kookmintaxi.android.screen.PlaceFinder">
+
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_search_from_place"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/search_div"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/search_bar"
+        android:background="@android:color/black"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/place_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_bar"/>
+
+</RelativeLayout>

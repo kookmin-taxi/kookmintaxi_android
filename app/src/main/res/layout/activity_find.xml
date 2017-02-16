@@ -4,10 +4,70 @@
     android:id="@+id/activity_find"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="40dp"
     tools:context="com.kookmintaxi.android.screen.Find">
+
+    <TextView
+        android:id="@+id/find_route_summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:text="출발: 국민대 / 도착: 성신여대"/>
+    <TextView
+        android:id="@+id/find_filter_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/find_route_summary"
+        android:layout_centerHorizontal="true"
+        android:text="10분내 출발 / 남자여자 상관없이" />
+
+    <TextView
+        android:id="@+id/find_info_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/find_filter_option"
+        android:layout_centerHorizontal="true"
+        android:text="@string/find_info_message"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/find_result_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingBottom="50dp"
+        android:layout_below="@id/find_info_message"/>
+
+    <TextView
+        android:id="@+id/find_info_message_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/find_result_list"
+        android:layout_centerHorizontal="true"
+        android:text="@string/find_info_message_2"/>
+
+    <TextView
+        android:id="@+id/find_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/find_info_message_2"
+        android:text="@string/find_result"/>
+
+
+
+    <Button
+        android:id="@+id/find_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/find_cancel"
+        android:text="@string/find_confirm"/>
+
+    <Button
+        android:id="@+id/find_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/find_cancel"/>
 
 </RelativeLayout>

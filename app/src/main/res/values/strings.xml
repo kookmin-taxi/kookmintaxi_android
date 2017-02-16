@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">국민택시</string>
+    <string name="app_small_main_text">Kookmin Taxi\n#같이택시타자!</string>
+    <string name="app_main_text">
+        <![CDATA[
+            국민대<br/>택시 카풀<br/><b>국민 택시</b>
+        ]]>
+    </string>
+
+    <string name="main_find_start">탐색하기</string>
+    <string name="main_from_label">출발</string>
+    <string name="main_to_label">도착</string>
+
+    <string name="btn_main_set_detail">+ 세부사항 설정</string>
+    <string name="input_from_place">출발장소를 입력해주세요.</string>
+    <string name="input_to_place">도착장소를 입력해주세요.</string>
+    <string name="max_count_label">최대 탑승 인원수</string>
+    <string name="gender_all">남여 상관없음</string>
+    <string name="gender_male">남자만</string>
+    <string name="gender_female">여자만</string>
+    <string name="departure_time_label">출발시간</string>
+    <string name="departure_time_10_min">10분 후</string>
+    <string name="departure_time_30_min">30분 후</string>
+    <string name="departure_time_1_hour">1시간 후</string>
+
+    <string name="input_search_from_place">출발위치 검색</string>
+    <string name="input_search_to_place">도착위치 검색</string>
+
+    <string name="input_id">학번 입력</string>
+    <string name="input_pw">비밀번호 입력</string>
+
+    <string name="find_confirm">이대로 탈까요? 요청하기</string>
+    <string name="find_cancel">탐색 취소하기</string>
+    <string name="find_info_message">앱을 종료해도 상대를 찾으면 자동으로 알림을 드립니다!</string>
+    <string name="find_info_message_2">계속 상대를 찾는 중입니다!</string>
+    <string name="find_result">찾은 인원 0명</string>
+    <string name="predict_cost_placeholder">예상 소요시간: 20분 / 예상금액: 6000원</string>
+    <string name="find_filter_placeholder">출발시간 지금부터 10분 후 / 남여 상관없이 / 최대인원 2명</string>
+
 </resources>
