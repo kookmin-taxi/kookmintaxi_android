@@ -34,7 +34,7 @@ public class Auth {
                       @Field("male") boolean male,
                       @Field("phone_num") String phoneNum);
 
-        @POST("/auth/check")
+        @POST("/auth/auth")
         @FormUrlEncoded
         void check(@Field("id") String id,
                    @Field("pw") String pw,

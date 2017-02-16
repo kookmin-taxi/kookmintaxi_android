@@ -6,6 +6,13 @@ package com.kookmintaxi.android.net.res;
 
 public class TaxiFindResult extends Common {
 
-    public boolean find_done;
-    public int person_count;
+    public RoomInfo room_info;
+
+    public static class RoomInfo {
+        public User[] users;
+        public int users_count;
+        public boolean activation;
+        public int activation_count;
+        public boolean done;
+    }
 }

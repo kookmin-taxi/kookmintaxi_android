@@ -11,7 +11,8 @@
     <string name="main_from_label">출발</string>
     <string name="main_to_label">도착</string>
 
-    <string name="btn_main_set_detail">+ 세부사항 설정</string>
+    <string name="btn_main_set_detail">+ 세부사항 설정 보기</string>
+    <string name="btn_main_unset_detail">- 세부사항 숨기기</string>
     <string name="input_from_place">출발장소를 입력해주세요.</string>
     <string name="input_to_place">도착장소를 입력해주세요.</string>
     <string name="max_count_label">최대 탑승 인원수</string>
@@ -36,5 +37,7 @@
     <string name="find_result">찾은 인원 0명</string>
     <string name="predict_cost_placeholder">예상 소요시간: 20분 / 예상금액: 6000원</string>
     <string name="find_filter_placeholder">출발시간 지금부터 10분 후 / 남여 상관없이 / 최대인원 2명</string>
+
+    <string name="try_again">다시 시도해 주세요.</string>
 
 </resources>

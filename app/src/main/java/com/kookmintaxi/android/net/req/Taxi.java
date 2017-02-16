@@ -1,13 +1,12 @@
 package com.kookmintaxi.android.net.req;
 
 import com.kookmintaxi.android.net.RetrofitFactory;
+import com.kookmintaxi.android.net.res.Common;
 import com.kookmintaxi.android.net.res.TaxiFindResult;
-import com.kookmintaxi.android.net.res.TaxiReg;
 
 import retrofit2.Callback;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -22,7 +21,7 @@ public class Taxi {
 
     public interface TaxiService {
 
-        @POST("/taxi/findreg")
+        @POST("/room/join")
         @FormUrlEncoded
         void findreg(@Field("access_token") String accessToken,
                      @Field("from") String from,
@@ -31,12 +30,21 @@ public class Taxi {
                      @Field("due_time") String dueTime,
                      @Field("gender") String gender,
                      @Field("max_person") String maxPerson,
-                     Callback<TaxiReg> callback);
+                     Callback<Common> callback);
 
-        @GET("/taxi/find")
+        @POST("/room/view")
         @FormUrlEncoded
         void find(@Query("find_token") String findToken,
                   Callback<TaxiFindResult> callback);
+
+        @POST("/room/out")
+        @FormUrlEncoded
+        void cancelFind();
+
+        @POST("/room/stop_request")
+        @FormUrlEncoded
+        void confirm(@Field("access_token") String access_token,
+                     Callback<Common> callback);
     }
 
     static TaxiService create() {

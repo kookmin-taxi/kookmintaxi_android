@@ -126,6 +126,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/main_btn_set_detail"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:orientation="vertical">
                     <LinearLayout
                         android:id="@+id/departure_time_container"
@@ -146,7 +147,7 @@
                             android:text="@string/departure_time_label"/>
 
                         <Button
-                            android:id="@+id/main_btn_30_min"
+                            android:id="@+id/main_btn_10_min"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:minHeight="0dp"
@@ -158,7 +159,7 @@
                             android:textSize="15sp"
                             android:background="@color/colorPrimary"/>
                         <Button
-                            android:id="@+id/main_btn_1_hour"
+                            android:id="@+id/main_btn_30_min"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:minHeight="0dp"
@@ -171,7 +172,7 @@
                             android:textSize="15sp"
                             android:background="@drawable/square_line_border"/>
                         <Button
-                            android:id="@+id/main_btn_2_hour"
+                            android:id="@+id/main_btn_1_hour"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:minHeight="0dp"

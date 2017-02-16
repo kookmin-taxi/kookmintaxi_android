@@ -6,6 +6,6 @@ package com.kookmintaxi.android.net.res;
 
 public class Common {
 
-    public String status;
+    public boolean status;
     public String message;
 }

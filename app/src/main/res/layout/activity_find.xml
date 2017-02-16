@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="40dp"
+    android:background="@color/colorFindBG"
     tools:context="com.kookmintaxi.android.screen.Find">
 
     <TextView
@@ -27,40 +28,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/find_filter_option"
+        android:paddingTop="50dp"
         android:layout_centerHorizontal="true"
         android:text="@string/find_info_message"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/find_result_list"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:paddingBottom="50dp"
-        android:layout_below="@id/find_info_message"/>
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_below="@id/find_info_message"
+        android:background="@android:color/white">
 
-    <TextView
-        android:id="@+id/find_info_message_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/find_result_list"
-        android:layout_centerHorizontal="true"
-        android:text="@string/find_info_message_2"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/find_result_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp"
+            android:paddingBottom="50dp"/>
 
-    <TextView
-        android:id="@+id/find_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/find_info_message_2"
-        android:text="@string/find_result"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="35dp"
+            android:background="@android:color/black" />
 
+        <TextView
+            android:id="@+id/find_info_message_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:text="@string/find_info_message_2"/>
 
+        <TextView
+            android:id="@+id/find_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/find_result"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/find_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/find_cancel"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPositive"
+        android:textColor="@android:color/white"
         android:text="@string/find_confirm"/>
 
     <Button
@@ -68,6 +87,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/colorNegative"
+        android:textColor="@android:color/white"
         android:text="@string/find_cancel"/>
 
 </RelativeLayout>
