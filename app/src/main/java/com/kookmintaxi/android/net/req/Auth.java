@@ -4,6 +4,7 @@ import com.kookmintaxi.android.net.RetrofitFactory;
 import com.kookmintaxi.android.net.res.Common;
 import com.kookmintaxi.android.net.res.Login;
 
+import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -23,22 +24,20 @@ public class Auth {
 
         @POST("/auth/login")
         @FormUrlEncoded
-        void login(@Field("id") String id,
-                          @Field("pw") String pw,
-                          Callback<Login> callback);
+        Call<Login> login(@Field("id") String id,
+                          @Field("pw") String pw);
 
         @POST("/auth/register")
         @FormUrlEncoded
-        void register(@Field("name") String name,
-                      @Field("grade") String grade,
-                      @Field("male") boolean male,
-                      @Field("phone_num") String phoneNum);
+        Call<Login> register(@Field("name") String name,
+                             @Field("grade") String grade,
+                             @Field("male") boolean male,
+                             @Field("phone_num") String phoneNum);
 
         @POST("/auth/auth")
         @FormUrlEncoded
-        void check(@Field("id") String id,
-                   @Field("pw") String pw,
-                   Callback<Common> callback);
+        Call<Common> check(@Field("id") String id,
+                   @Field("pw") String pw);
     }
 
     static AuthService create() {

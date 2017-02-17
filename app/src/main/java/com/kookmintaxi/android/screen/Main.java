@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kookmintaxi.android.R;
+import com.kookmintaxi.android.adapter.SearchResultAdapter;
 import com.kookmintaxi.android.base.BaseActivity;
 import com.kookmintaxi.android.net.req.Taxi;
 
@@ -76,7 +77,7 @@ public class Main extends BaseActivity implements View.OnClickListener {
         gender_female.setOnClickListener(this);
     }
 
-    void checkRouteState() {
+    void checkRouteState(String point) {
 
     }
 
@@ -123,7 +124,7 @@ public class Main extends BaseActivity implements View.OnClickListener {
     void startFind() {
         Intent i = new Intent(this, Find.class);
         i.putExtra(Find.SUMMARY, "출발: " + from.getText().toString()
-                + " / 출발: " + to.getText().toString());
+                + " / 도착: " + to.getText().toString());
         i.putExtra(Find.FILTER, find_filter.getText().toString());
         startActivity(i);
     }
@@ -224,9 +225,28 @@ public class Main extends BaseActivity implements View.OnClickListener {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         //  insert select place
         if(requestCode == FIND_PLACE_REQ_CODE
-                && resultCode == PlaceFinder.FIND_PLACE_RESULT_CODE
+                && resultCode == RESULT_OK
                 && data != null) {
-            checkRouteState();
+            String point = data.getExtras().getString(PlaceFinder.SELECTED);
+            switch (data.getExtras().getInt(PlaceFinder.WHERE)) {
+                case R.id.main_from:
+                    from.setText(point);
+                    if(point.equals("국민대학교")) {
+                        from.setTextColor(Color.RED);
+                    } else {
+                        from.setTextColor(Color.BLACK);
+                    }
+                    break;
+                case R.id.main_to:
+                    to.setText(point);
+                    if(point.equals("국민대학교")) {
+                        to.setTextColor(Color.RED);
+                    } else {
+                        to.setTextColor(Color.BLACK);
+                    }
+                    break;
+            }
+            checkRouteState(point);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

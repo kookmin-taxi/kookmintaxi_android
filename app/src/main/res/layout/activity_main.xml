@@ -287,7 +287,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/main_filter_detail_container"
-                    android:paddingTop="30dp"
+                    android:visibility="invisible"
+                    android:paddingTop="20dp"
                     android:text="@string/predict_cost_placeholder"/>
 
                 <TextView

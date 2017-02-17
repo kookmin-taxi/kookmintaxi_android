@@ -2,6 +2,7 @@ package com.kookmintaxi.android.net;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by JaewookAhn on 15/02/2017.
@@ -19,6 +20,7 @@ public class RetrofitFactory {
         instance = this;
         retrofit = new Retrofit.Builder()
                 .client(new OkHttpClient())
+                .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(ENDPOINT)
                 .build();
     }

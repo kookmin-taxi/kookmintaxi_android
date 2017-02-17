@@ -53,11 +53,12 @@ public class Find extends BaseActivity implements View.OnClickListener {
             String gender = getIntent().getStringExtra(GENDER);
             String max_person = getIntent().getStringExtra(MAX_PERSON);
             taxiService.findreg(SessionPref.getInstance(this).getSession(),
-                    from, to, departure_time, null, gender, max_person, new Callback<Common>() {
+                    from, to, departure_time, null, gender, max_person)
+                    .enqueue(new Callback<Common>() {
                         @Override
                         public void onResponse(Call<Common> call, Response<Common> response) {
-                            if(response.isSuccessful()) {
-
+                            if(response.isSuccessful() && response.body().status) {
+                                //  start check room
                             } else {
                                 onFailure(call, new Throwable(""));
                             }
@@ -65,7 +66,7 @@ public class Find extends BaseActivity implements View.OnClickListener {
 
                         @Override
                         public void onFailure(Call<Common> call, Throwable t) {
-                            Toast.makeText(Find.this, getString(R.string.try_again), Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(Find.this, getString(R.string.try_again), Toast.LENGTH_SHORT).show();
                         }
                     });
         }

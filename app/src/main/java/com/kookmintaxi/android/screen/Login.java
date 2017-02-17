@@ -59,13 +59,16 @@ public class Login extends BaseActivity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_btn:
-                authService.check(id.getText().toString(), pw.getText().toString(),
-                        new Callback<Common>() {
+                if(id.getText().toString().equals("") || pw.getText().toString().equals("")) {
+                    return;
+                }
+                authService.check(id.getText().toString(), pw.getText().toString())
+                        .enqueue(new Callback<Common>() {
                             @Override
                             public void onResponse(Call<Common> call, Response<Common> response) {
                                 if(response.isSuccessful() && response.body().status) {
                                     //  move to register screen
-                                    startActivity(new Intent(Login.this, Register.class));
+                                    startActivity(new Intent(Login.this, Main.class));
                                 } else {
                                     onFailure(call, new Throwable(""));
                                 }
